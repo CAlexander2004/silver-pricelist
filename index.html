@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Harga Silver Batangan - 20 Januari 2026</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero">
+    <!-- Overlay untuk kontras teks -->
+    <div class="hero-overlay"></div>
+    <!-- Konten Hero -->
+    <div class="hero-content">
+        <div class="hero-icon">🥈</div>
+        <h1>Harga Silver Batangan</h1>
+        <p>
+            Update Terakhir:
+            <strong>20 Januari 2026</strong>
+        </p>
+    </div>
+</header>
+    
+
+<section class="price-section">
+    <div class="section-title">
+        📊 <span>Daftar Harga Silver</span>
+    </div>
+
+    <table class="silver-table">
+        <thead>
+            <tr>
+                <th>Gramasi</th>
+                <th>Harga Jual</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>10 Gram</td><td>Rp 600.000</td></tr>
+            <tr><td>25 Gram</td><td>Rp 1.455.000</td></tr>
+            <tr><td>50 Gram</td><td>Rp 2.855.000</td></tr>
+            <tr><td>100 Gram</td><td>Rp 5.700.000</td></tr>
+            <tr><td>250 Gram</td><td>Rp 14.050.000</td></tr>
+            <tr><td>500 Gram</td><td>Rp 27.450.000</td></tr>
+        </tbody>
+    </table>
+
+    <p class="update-note">
+        ⏰ <em>* Harga Akan Selalu Di Update Setiap Hari Pada Pukul 10:00 WITA</em>
+    </p>
+</section>
+
+<section class="buyback-section">
+    <div class="section-title green">
+        🔄 <span>Harga Buyback Silver</span>
+    </div>
+
+    <table class="buyback-table shimmer">
+        <tr>
+            <th>Harga Buyback</th>
+            <td id="buybackPrice" data-price="51000">Rp 51.000 / gram</td>
+        </tr>
+    </table>
+</section>
+
+<section class="simulator">
+    <div class="section-title">
+        🧮 <span>Simulasi Buyback</span>
+    </div>
+
+    <div class="simulator-card">
+        <label>Gramasi Silver (Gram)</label>
+        <input type="number" id="weight" placeholder="Contoh: 100">
+
+        <button onclick="calculateBuyback()">Hitung Buyback</button>
+
+        <div class="result" id="result" style="margin-top: 5%;">Total Buyback: Rp 0</div>
+    </div>
+</section>
+
+<div class="section-title">
+    <span>Hubungi Kami</span>
+</div>
+<!-- CTA -->
+<div class="contact-bar">
+    
+    <a href="https://wa.me/081934577360" target="_blank" class="contact-btn">
+        💬 Whatsapp Kami
+    </a>
+</div>
+
+<footer>
+    © 2026 Silver Market Indonesia • 🛡️ Transparan • 📈 Update Harian • 🤝 Terpercaya
+</footer>
+
+<script>
+function calculateBuyback() {
+    const weight = document.getElementById("weight").value;
+    const price = document.getElementById("buybackPrice").dataset.price;
+    const result = document.getElementById("result");
+
+    if (!weight || weight <= 0) {
+        result.innerHTML = "Masukkan gramasi yang valid.";
+        result.style.color = "red";
+        return;
+    }
+
+    const total = weight * price;
+    result.style.color = "#0f172a";
+    result.innerHTML = "Total Buyback Untuk " + weight +" gram : Rp " + total.toLocaleString("id-ID");
+}
+</script>
+
+</body>
+</html>

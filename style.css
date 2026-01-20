@@ -1,0 +1,234 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    margin: 0;
+    background:
+        radial-gradient(circle at 10% 20%, rgba(59,130,246,0.08), transparent),
+        radial-gradient(circle at 90% 80%, rgba(234,179,8,0.12), transparent),
+        #f8fafc;
+    color: #0f172a;
+}
+
+/* HERO */
+.hero {
+    position: relative;
+    height: 280px;
+    background: url("img/hero-bg.png") center / cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        120deg,
+        rgba(15, 23, 42, 0.75),
+        rgba(30, 41, 59, 0.65)
+    );
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    animation: fadeUp 1.2s ease;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(255,255,255,0.15),
+        transparent
+    );
+    animation: shine 5s infinite;
+}
+
+@keyframes shine {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(100%); }
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 2;
+    animation: fadeUp 1.2s ease;
+}
+
+.hero-icon {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* SECTION TITLE */
+.section-title {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.section-title span {
+    margin-left: 8px;
+}
+
+.section-title.green {
+    color: #16a34a;
+}
+
+/* TABLE */
+.price-section {
+    padding: 40px 20px;
+}
+
+.silver-table {
+    margin: auto;
+    width: 90%;
+    max-width: 720px;
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.silver-table th {
+    background: linear-gradient(135deg, #64748b, #94a3b8);
+    color: white;
+}
+
+.silver-table td, th {
+    padding: 16px;
+    text-align: center;
+}
+
+.silver-table tbody tr:hover {
+    background: #e5e7eb;
+}
+
+.update-note {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+    color: #475569;
+}
+
+/* BUYBACK */
+.buyback-section {
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buyback-table {
+    width: 90%;
+    max-width: 600px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.buyback-table th {
+    background: #16a34a;
+    color: white;
+    padding: 18px;
+}
+
+.buyback-table td {
+    background: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.shimmer td {
+    background: linear-gradient(110deg, #fff, #f1f5f9, #fff);
+    background-size: 200% 100%;
+    animation: shimmer 2.5s infinite;
+}
+
+@keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* SIMULATOR */
+.simulator {
+    padding: 40px 20px;
+}
+
+.simulator-card {
+    max-width: 420px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.simulator-card input,
+.simulator-card button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 12px;
+    border-radius: 12px;
+    border: 1px solid #cbd5e1;
+}
+
+.simulator-card button {
+    background: linear-gradient(135deg, #1e293b, #334155);
+    color: white;
+    cursor: pointer;
+}
+
+/* CTA */
+.contact-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-btn {
+    background: #22c55e;
+    color: white;
+    padding: 14px 24px;
+    border-radius: 999px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.06); }
+    100% { transform: scale(1); }
+}
+
+footer {
+    margin-top: 90px;
+    padding: 20px;
+    background: #0f172a;
+    color: #cbd5e1;
+    text-align: center;
+    font-size: 14px;
+}
+
+
